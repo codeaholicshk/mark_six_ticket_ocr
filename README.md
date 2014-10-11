@@ -7,6 +7,12 @@
 * stores on server
 * notify after draw result is released
 
+## Tech details
+
+* iOS - Swift
+* Cocoapods
+* OpenCV
+* Tesseract
 
 ## 01 Chore: Preprocess by greyscale or not ?
 
