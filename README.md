@@ -16,9 +16,30 @@
 
 ## 01 Chore: Preprocess by greyscale or not ?
 
+Test Code
+
+    var image = originalImage!.image
+    var greyScaleImage = MarkSixOpenCV.filterBlackColor(image);
+    convertedImage!.image = greyScaleImage as UIImage;
+    
+    let tesseract = Tesseract(language: "eng");
+    tesseract.delegate = self;
+    
+    tesseract.setVariableValue("0123456789+$ABCDEFGHIJKLMNOPQRSTUVXYZ.", forKey: "tessedit_char_whitelist") //limit search
+    
+    tesseract.image = image; //image to check
+    tesseract.recognize();
+    
+    NSLog("Before grey %@", tesseract.recognizedText!);
+    
+    tesseract.image = greyScaleImage; //image to check
+    tesseract.recognize();
+    
+    NSLog("After grey %@", tesseract.recognizedText!);
+
 Before Greyscale
 
-    2014-10-11 11:09:38.765 MarkSixOCR[10272:160716] After grey 0. 0E.R1QF03$$1  ISLVA 01
+    2014-10-11 11:09:38.765 MarkSixOCR[10272:160716] Before grey 0. 0E.R1QF03$$1  ISLVA 01
     000.0E 
     Z1E3E$E E$Z$3 MM 30 901010 P1CK
     3L1$35MDI0VV N00 095
@@ -37,7 +58,7 @@ Before Greyscale
 
 After Greyscale
 
-    2014-10-11 11:09:37.122 MarkSixOCR[10272:160716] Before grey  E$H$ R 1 $ V3E3 M IVNVA 14.1
+    2014-10-11 11:09:37.122 MarkSixOCR[10272:160716] After grey  E$H$ R 1 $ V3E3 M IVNVA 14.1
     X J11E141  1155 LHNE1
 
     11LQ $55 $EEE  MMK $1 MK PM
