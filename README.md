@@ -1,4 +1,8 @@
-mark_six_ticket_ocr
+Mark Six Ticket iOS OCR
 ===================
 
-iOS appsextract 
+* transform mark six ticket
+* OCR
+* extract important information
+* stores on server
+* notify after draw result is released
